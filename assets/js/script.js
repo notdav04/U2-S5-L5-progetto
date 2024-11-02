@@ -9,7 +9,7 @@ window.onscroll = function () {
     header.style.backgroundColor = "white";
     headerButton.style.backgroundColor = "#1a8917";
     header.style.transition = "All 0.5s";
-    headerButton;
+    headerButton.style.transition = "All 0.5s";
   } else {
     header.style.backgroundColor = "#ffc017";
     headerButton.style.backgroundColor = "#191919";
@@ -26,8 +26,10 @@ function modifyM() {
       letterM[random_position]
     ).opacity;
     if (opacityValue === "0") {
+      letterM[random_position].style.transition = "opacity 0.2s ease";
       letterM[random_position].style.opacity = "1";
     } else {
+      letterM[random_position].style.transition = "opacity 0.2s ease";
       letterM[random_position].style.opacity = "0";
     }
     i++;
