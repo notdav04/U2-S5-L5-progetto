@@ -3,6 +3,7 @@
 
 body {
   font-family: "Roboto";
+  margin: 0;
 }
 
 header {
@@ -70,12 +71,11 @@ header {
   font-size: 1rem;
 }
 
-#first-section svg {
+#first-section #svg-wrapper {
   position: absolute;
-  right: -40rem;
-  top: -11rem;
-  scale: 0.5;
-  width: 2rem;
+  right: 1rem;
+  top: 4rem;
+  scale: 1;
 }
 
 /*--------------------Trending---------------*/
@@ -205,8 +205,6 @@ span {
   display: flex;
   align-content: center;
   margin-top: -2.5rem;
-
-  /* gap: 2rem; */
 }
 
 #articles-wrapper .articles-element .element-text {

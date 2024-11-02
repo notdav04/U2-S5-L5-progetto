@@ -3,7 +3,7 @@ let header = document.querySelector("header");
 let headerButton = document.getElementById("last-nav-button");
 const heroBottom = hero.offsetTop + hero.offsetHeight;
 const headerHeight = header.offsetHeight;
-const offset = 5;
+const offset = 25;
 window.onscroll = function () {
   if (window.scrollY >= heroBottom - headerHeight - offset) {
     header.style.backgroundColor = "white";
@@ -17,24 +17,21 @@ window.onscroll = function () {
 };
 let alternate = false;
 function modifyM() {
-  const letterM = document.querySelectorAll("g");
-  let ctrl = true;
+  const letterM = document.querySelectorAll("g path");
 
-  if (alternate === false) {
-    console.log("if");
-    alternate = true;
+  let i = 0;
+  while (i < 19) {
     let random_position = Math.floor(Math.random() * letterM.length);
-    // console.log(letterM[random_position].style.opacity);
-    letterM[random_position].style.opacity = "1";
-  } else {
-    console.log("else");
-    alternate = false;
-    let random_position = Math.floor(Math.random() * letterM.length);
-    if (random_position > 5) {
+    let opacityValue = window.getComputedStyle(
+      letterM[random_position]
+    ).opacity;
+    if (opacityValue === "0") {
+      letterM[random_position].style.opacity = "1";
+    } else {
       letterM[random_position].style.opacity = "0";
     }
+    i++;
   }
-  // console.log(letterM[random_position].style.opacity);
 }
 
-setInterval(modifyM, 200);
+setInterval(modifyM, 300);
